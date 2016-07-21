@@ -1,0 +1,30 @@
+#title {
+	width: 100%;
+	margin: 0.5rem auto;
+	text-align: center;
+	font-family: 'Bangers', cursive;
+}
+
+#title h1 {
+	font-size: 5rem;
+	margin-bottom: -1rem;	
+}
+
+#title p {
+	margin-bottom: 5rem;
+}
+
+#events {
+	width: 80rem;
+	margin: 0 auto;
+}
+
+.thumbnail {
+	height: 15rem;
+	width: 10rem;
+}
+
+/*
+font-family: 'Bangers', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+*/
