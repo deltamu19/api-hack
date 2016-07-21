@@ -2,8 +2,12 @@
 #search-section {
 	width: 100%;
 	margin: 0.5rem auto;
+}
+
+#title,
+#search-section,
+#summary {
 	text-align: center;
-	
 }
 
 #title {
@@ -22,6 +26,11 @@
 #search-section {
 	font-family: 'Shadows Into Light Two', cursive;
 	padding-bottom: 3rem;
+}
+
+#search-section,
+#summary {
+	font-family: 'Shadows Into Light Two', cursive;
 }
 
 #input,
@@ -44,20 +53,31 @@
 #events {
 	width: 80rem;
 	margin: 0 auto;
+	position: fixed;
+	left: 20rem;
 }
 
 .thumbnail {
 	height: 15rem;
 	width: 10rem;
+	z-index: 1;
+
 }
 
 #summary {
 	z-index: 20;
 	position: absolute;
-	width: 20rem;
-	height: 20rem;
+	width: 30rem;
+	height: 30rem;
 	opacity: 0.85;
+	background-color: white;
+	left: 45rem;
+	border-radius: 10%;
+	font-weight: 700;
+	display: none;
 }
+
+
 /*
 font-family: 'Bangers', cursive;
 font-family: 'Shadows Into Light Two', cursive;
