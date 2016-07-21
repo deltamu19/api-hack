@@ -1,7 +1,12 @@
-#title {
+#title,
+#search-section {
 	width: 100%;
 	margin: 0.5rem auto;
 	text-align: center;
+	
+}
+
+#title {
 	font-family: 'Bangers', cursive;
 }
 
@@ -14,6 +19,28 @@
 	margin-bottom: 5rem;
 }
 
+#search-section {
+	font-family: 'Shadows Into Light Two', cursive;
+	padding-bottom: 3rem;
+}
+
+#input,
+.submit {
+	height: 2rem;
+}
+
+#input {
+	width: 30rem;
+}
+
+.submit {
+	width: 6rem;
+	font-weight: 900;
+	border-radius: 8%;
+	background-color: gray;
+	font-size: 1rem;
+}
+
 #events {
 	width: 80rem;
 	margin: 0 auto;
@@ -24,6 +51,13 @@
 	width: 10rem;
 }
 
+#summary {
+	z-index: 20;
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	opacity: 0.85;
+}
 /*
 font-family: 'Bangers', cursive;
 font-family: 'Shadows Into Light Two', cursive;
