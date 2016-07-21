@@ -21,47 +21,43 @@ var getRequest = function(query) {
 		dataType: 'json',
 		type: 'GET'
 	})
+
 	.done(function(result){
 		var character = result.data.results[0].id;
 
-	
-		
 		$.ajax({
 			url:'http://gateway.marvel.com:80/v1/public/events?characters=' + character + '&limit=100&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
 			dataType: 'json',
 			type: 'GET'
 		})
+
 		.done(function(result){
 			var src = "";
-			var href = "";
+			var eventName = "";
+			var description = "";
 			var listObjects = result.data.results;
 			$.each(listObjects, function(index, value) {
 				
 				src += '<a target="_blank" href="' + value.urls[0].url + '"><img class="thumbnail" src="' + value.thumbnail.path + '.' + value.thumbnail.extension + '"></a>';
-
+				eventName += value.title;
+				description += value.description;
 			});
 
 			$('#events').html(src);
 			
-
+			/*
+			var pixClick = function($(this).click()) {
+				$('#summary').show();
+				$('.event-name').text(eventName);
+				$('.description').text(description);
+			};
+			*/
 		});
 	});
 };
 
-/*
-var showResults = function(results) {
-	$('#search-results p').text(results.data.results.name);
-}
+
 
 /*
-nameOfHero
-	data.results.name
-heroPic
-	data.results.thumbnail.path
-*/
-
-/*
-List all Marvel Events
-When click on an event, it shows an image, summary, start and end date, and list of characters in it
-
+value.urls[0].url
 */

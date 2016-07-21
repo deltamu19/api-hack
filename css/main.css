@@ -16,16 +16,17 @@
 
 #title h1 {
 	font-size: 5rem;
+	margin-top: 1rem;
 	margin-bottom: -1rem;	
 }
 
 #title p {
-	margin-bottom: 5rem;
+	margin-bottom: 2rem;
 }
 
 #search-section {
 	font-family: 'Shadows Into Light Two', cursive;
-	padding-bottom: 3rem;
+	padding-bottom: 1rem;
 }
 
 #search-section,
@@ -51,7 +52,7 @@
 }
 
 #events {
-	width: 80rem;
+	width: 85rem;
 	margin: 0 auto;
 	position: fixed;
 	left: 20rem;
@@ -75,6 +76,12 @@
 	border-radius: 10%;
 	font-weight: 700;
 	display: none;
+
+}
+
+.event-name,
+.description {
+	margin: 2rem;
 }
 
 
