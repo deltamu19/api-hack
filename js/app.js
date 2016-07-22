@@ -17,7 +17,7 @@ var getRequest = function(query) {
 	var md5 = $.md5(timestamp + privatekey + publickey);
 
 	$.ajax({
-		url:'https://gateway.marvel.com:80/v1/public/characters?name=' + query + '&limit=1&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
+		url:'//gateway.marvel.com:80/v1/public/characters?name=' + query + '&limit=1&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
 		dataType: 'json',
 		type: 'GET'
 	})
@@ -26,7 +26,7 @@ var getRequest = function(query) {
 		var character = result.data.results[0].id;
 
 		$.ajax({
-			url:'https://gateway.marvel.com:80/v1/public/events?characters=' + character + '&limit=100&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
+			url:'//gateway.marvel.com:80/v1/public/events?characters=' + character + '&limit=100&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
 			dataType: 'json',
 			type: 'GET'
 		})
