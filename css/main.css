@@ -54,9 +54,6 @@
 #events {
 	width: 85rem;
 	margin: 0 auto;
-
-	left: 20rem;
-
 }
 
 .thumbnail {
@@ -67,7 +64,7 @@
 }
 
 #summary {
-	top: -500px;
+	top: -50rem;
 	left: 40%;
 	z-index: 100;
 	position: absolute;
@@ -83,7 +80,7 @@
 }
 
 #summary.show{
-	top: 300px;
+	top: 20rem;
 }
 
 .event-name,
