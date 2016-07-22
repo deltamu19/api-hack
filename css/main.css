@@ -17,7 +17,7 @@
 #title h1 {
 	font-size: 5rem;
 	margin-top: 1rem;
-	margin-bottom: -1rem;	
+	margin-bottom: -1rem;
 }
 
 #title p {
@@ -54,29 +54,36 @@
 #events {
 	width: 85rem;
 	margin: 0 auto;
-	position: fixed;
+
 	left: 20rem;
+
 }
 
 .thumbnail {
 	height: 15rem;
 	width: 10rem;
-	z-index: 1;
+	z-index: 10;
 
 }
 
 #summary {
-	z-index: 20;
+	top: -500px;
+	left: 40%;
+	z-index: 100;
 	position: absolute;
-	width: 30rem;
-	height: 30rem;
+	width: 25rem;
+	height: 25rem;
 	opacity: 0.85;
 	background-color: white;
-	left: 45rem;
+	margin: 2rem auto;
 	border-radius: 10%;
 	font-weight: 700;
-	display: none;
+  transition: all 1s linear;
+	--webkit-transition: all 1s linear;
+}
 
+#summary.show{
+	top: 300px;
 }
 
 .event-name,

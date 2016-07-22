@@ -17,7 +17,7 @@ var getRequest = function(query) {
 	var md5 = $.md5(timestamp + privatekey + publickey);
 
 	$.ajax({
-		url:'http://gateway.marvel.com:80/v1/public/characters?name=' + query + '&limit=1&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
+		url:'//gateway.marvel.com:80/v1/public/characters?name=' + query + '&limit=1&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
 		dataType: 'json',
 		type: 'GET'
 	})
@@ -26,32 +26,39 @@ var getRequest = function(query) {
 		var character = result.data.results[0].id;
 
 		$.ajax({
-			url:'http://gateway.marvel.com:80/v1/public/events?characters=' + character + '&limit=100&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
+			url:'//gateway.marvel.com:80/v1/public/events?characters=' + character + '&limit=100&apikey=' + publickey + '&hash=' + md5 + '&ts=' + timestamp,
 			dataType: 'json',
 			type: 'GET'
 		})
 
 		.done(function(result){
-			var src = "";
-			var eventName = "";
-			var description = "";
+			$('#events').html("");
+
 			var listObjects = result.data.results;
 			$.each(listObjects, function(index, value) {
-				
-				src += '<a target="_blank" href="' + value.urls[0].url + '"><img class="thumbnail" src="' + value.thumbnail.path + '.' + value.thumbnail.extension + '"></a>';
-				eventName += value.title;
-				description += value.description;
+
+				var link = $('<img class="thumbnail" src="' + value.thumbnail.path + '.' + value.thumbnail.extension + '">');
+
+
+				function eventclick(){
+					return function(){
+						console.log(value);
+						$('.event-name').html('<a target="_blank" href="' + value.urls[0].url + '">' + value.title + '</a>');
+						$('.description').text(value.description);
+						$('#summary').toggleClass("show");
+					};
+				}
+
+				link.click(eventclick());
+
+				$('#events').append(link);
 			});
 
-			$('#events').html(src);
-			
-			/*
-			var pixClick = function($(this).click()) {
-				$('#summary').show();
-				$('.event-name').text(eventName);
-				$('.description').text(description);
-			};
-			*/
+
+		});
+
+		$(".close").click(function(){
+			$('#summary').toggleClass("show");
 		});
 	});
 };
